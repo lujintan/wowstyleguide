@@ -2,9 +2,11 @@
 
 组件标示一组js+css+image来完成一项扩展功能。
 
-* 【强制】组件必须采用异步模块化加载方式，放入widget目录下
-* 【强制】组件js书写符合commonjs规范，在编译时编译脚本自动进行`amd`包裹
+* 【强制】组件必须放置于src/widget目录下
+* 【强制】组件中必须有main.js|main.less文件作为组件的入口文件，放于同一目录，目录名为组件名
+* 【强制】组件js书写符合commonjs规范，在编译时编译脚本自动进行`amd`包裹，amdId: '模块目录/src/widget/组件目录名'
     ```javascript
+    //main.js
     var xxx = require('common/src/widget/xxx');
     var _init = function(){
         //...
@@ -14,7 +16,7 @@
     };
     
     //-->
-    define('xxx', function(require, exports, module){
+    define("common/src/widget/xxx", ["require", "exports", "module", "css!common/src/widget/back2top/main"], function(require, exports, module){
         var xxx = require('common/src/widget/xxx');
         var _init = function(){
             //...
@@ -24,10 +26,9 @@
         };
     });
     ```
-* 【强制】ID生成规范：
-    * ID为String类型，命名：xxx(模块名)/xxx(模块下组件资源的路径)
+* 【强制】amdID生成规范：
+    * ID为String类型，命名：xxx(模块path)/xxx(模块下组件资源的路径)
     * ID省略.js后缀
-* 【强制】组件目录下需要有main.js|main.css，表示该组件的入口文件
 * 【强制】组件目录下需要有使用markdown语法书写的README.md文件，来进行组件使用方面的相关描述
 * 【强制】widget加载方式：
     * var xxx = require('xxx(组件ID)');
