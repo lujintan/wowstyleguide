@@ -28,17 +28,16 @@
         };
     });
     ```
-* 【强制】amdID生成规范：
-    * ID为String类型，命名：xxx(模块path)/xxx(模块下组件资源的路径)
-    * ID省略.js后缀
+* 【强制】组件外部资源的require必须在文件最顶部完成，exports必须在文件最底部
 * 【强制】组件目录下需要有使用markdown语法书写的README.md文件，来进行组件使用方面的相关描述
-* 【强制】widget加载方式：
+* 【强制】widget组件可以被其他widget引用，也可以被外部异步引用，引用方式如下：
     * var xxx = require('xxx(组件ID)');
     * require(['xxx'], function(xxx){});
     * css或者其他类型那个文件按照如下方式引入ID：
         * css!common/src/widget/xxx
         * tpl!common/src/widget/xxx
-* 【强制】各模块不可以加载除common和自身以外其他模块的组件
+* 【强制】组件内除main.less文件外的其他样式文件引入，直接使用less的import语法引入至main.less
+* 【强制】各模块不可以加载除common和自身模块以外其他模块的组件
 * 【强制】组件中js禁止修改全局定义变量
 * 【强制】组件中css文件必须以`".w-组件名-xxx"`作为最外层选择器，以免样式覆盖
 * 【建议】分功能进行组件名区分，例如：
