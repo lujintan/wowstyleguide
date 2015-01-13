@@ -16,7 +16,9 @@
     };
     
     //-->
-    define("common/src/widget/xxx", ["require", "exports", "module", "css!common/src/widget/back2top/main"], function(require, exports, module){
+    define("common/src/widget/xxx", 
+        ["require", "exports", "module", "css!common/src/widget/back2top/main"], 
+        function(require, exports, module){
         var xxx = require('common/src/widget/xxx');
         var _init = function(){
             //...
