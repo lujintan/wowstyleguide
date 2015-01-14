@@ -29,7 +29,7 @@
 
 说明：spg handler即为单页面应用的子页面的处理逻辑，handler接口定义：
 
-    ```javascript
+```javascript
         interface Handler{
             /**
              * Will execute when block render
@@ -58,7 +58,7 @@
              */
             destroy(elem: Element, data: Object): void;
         }
-    ```
+```
 
 * 【强制】handler文件必须放置于src/js/handler目录下
 * 【强制】handler文件必须实现Handler接口，即必须exports,init方法，destroy方法（可选），repaint方法（可选）
@@ -68,7 +68,7 @@
 
 说明：spg dt即为单页面的数据转换器，即从server端取回的数据源会经过dt的过滤之后，再进行模板的渲染，dt文件形如：
 
-    ```javascript
+```javascript
         module.exports = function(dsData){
             //dsData 为server直接打回的数据
             //......
@@ -78,7 +78,7 @@
             //若返回`promise`，则renderData会作为resolve的第一个参数
             //关于`promise`的相关问题，可参见promise的相关规范
         }
-    ```
+```
 
 * 【强制】dt文件必须放置于src/js/dt目录下
 * 【强制】dt文件直接导出一个方法，方法参数为server返回的数据源，返回值为渲染模板的数据
