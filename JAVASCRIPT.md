@@ -67,6 +67,7 @@
 ###spg dt开发规范
 
 说明：spg dt即为单页面的数据转换器，即从server端取回的数据源会经过dt的过滤之后，再进行模板的渲染，dt文件形如：
+
     ```javascript
         module.exports = function(dsData){
             //dsData 为server直接打回的数据
