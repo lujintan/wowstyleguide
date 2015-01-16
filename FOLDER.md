@@ -16,6 +16,8 @@
     ├── css             //css 样式文件目录
     ├── less            //less 样式文件目录
     ├── js              //js 文件目录
+        ├── dt          //脚本文件，数据转换器
+        ├── handler     //脚本文件，页面逻辑处理器
     ├── image           //图片文件目录(可包含png,gif,jpg等)
     ├── swf             //flash文件
     ├── tpl             //smarty后端模板文件
